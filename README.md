@@ -65,40 +65,43 @@ This folder will be referred to from now on as the "*experiment folder*".
 The logs are generated in files that can only be read using the rock-replay command.  
 To export them in txt move in their folders and run a dedicated shell script.
 
+The shell scripts are available in this repo at "src/shell_scripts".  
+Download them in a path of your choice 
+
 For the sequence, move to the *sequence folder*:
 ```sh
-cd ~/rock/bundles/exoter/logs
-./RUN_export_sequence.sh
+cd ~/rock/bundles/exoter/logs/<sequence folder>
+/<shell scripts patch>/RUN_export_sequence.sh
 ```
 For the esperiment, move to the *experiment folder*:
 ```sh
-cd ~/rock/bundles/exoter/logs
-./RUN_export_sequence.sh
+cd ~/rock/bundles/exoter/logs/<experiment folder>
+/<shell scripts patch>/RUN_export_sequence.sh
 ```
 
 These 2 commands will generate the necessary txt files in the two respective folders.
 
 ##### Plot the results:
-Copy the *sequence folder* and *experiment folder* in the log folder in the matlab workspace at "vo_logs_visualization/logs"
+Copy the *sequence folder* and *experiment folder* in the log folder in the matlab workspace at "vo-experiment-plot/logs"
 
-Open the script "plot_vo.m"  
+Open the script "src/plot_vo.m"  
 Insert the sequence and experiment folder names at the beginning of the matlab script as follows:
 ```sh
 path_ca = {
- 'logs/<experiment folder>'};
+ '../logs/<experiment folder>'};
 vicon_path_ca = {
- 'logs/<sequence folder>'};
+ '../logs/<sequence folder>'};
 legend_names_verbose = {
  'name for the test'};
  ```
 To compare the results from multiple experiments, each generated from its own sequence, it's just necessary to add more elelents to each cell array (making sure each experiment corresponds to its sequence), as follows:
 ```sh
 path_ca = {
- 'logs/<experiment folder 1>',
- 'logs/<experiment folder 2>'};
+ '../logs/<experiment folder 1>',
+ '../logs/<experiment folder 2>'};
 vicon_path_ca = {
- 'logs/<sequence folder 1>',
- 'logs/<sequence folder 2>'};
+ '../logs/<sequence folder 1>',
+ '../logs/<sequence folder 2>'};
 legend_names_verbose = {
  '<name for test 1>',
  '<name for test 2>'};
@@ -112,11 +115,11 @@ legend_names_verbose = {
 This would be the code to use:
 ```sh
 path_ca = {
- 'logs/20200107-1421',
- 'logs/20200107-1425'};
+ '../logs/20200107-1421',
+ '../logs/20200107-1425'};
 vicon_path_ca = {
- 'logs/20200107-1408',
- 'logs/20200107-1414'};
+ '../logs/20200107-1408',
+ '../logs/20200107-1414'};
 legend_names_verbose = {
  'navcam',
  'loccam'};
