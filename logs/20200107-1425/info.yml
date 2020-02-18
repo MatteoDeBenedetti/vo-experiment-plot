@@ -1,0 +1,7 @@
+---
+- time: 20200107-1425
+  cmdline: "./virtual_spartan.rb "
+  robot_name: default
+  robot_type: default
+  app_name: exoter
+  app_dir: "/home/marta/rock/bundles/exoter"

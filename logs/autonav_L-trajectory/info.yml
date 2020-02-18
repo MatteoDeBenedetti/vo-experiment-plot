@@ -1,0 +1,7 @@
+---
+- time: 20200106-1332
+  cmdline: "./hwavo_remote.rb "
+  robot_name: default
+  robot_type: default
+  app_name: exoter
+  app_dir: "/home/marta/rock/bundles/exoter"

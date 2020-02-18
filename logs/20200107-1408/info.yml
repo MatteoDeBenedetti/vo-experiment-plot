@@ -1,0 +1,7 @@
+---
+- time: 20200107-1408
+  cmdline: "./vo_test_gen.rb "
+  robot_name: default
+  robot_type: default
+  app_name: exoter
+  app_dir: "/home/marta/rock/bundles/exoter"
