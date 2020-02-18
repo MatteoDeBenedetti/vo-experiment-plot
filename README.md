@@ -42,7 +42,7 @@ Open the VO script.
 cd ~/rock/bundles/exoter/scripts
 vim virtual_spartan.rb
 ```
-change the reference to the *sequence folder*, for example here it points to 20191204-1620
+change the reference to the *sequence folder*, for example here it points to 20200213-1741
 ```sh
 15 # open log file 
 16 log = Orocos::Log::Replay.open('~/rock/bundles/exoter/logs/20200213-1741/loccam.0.log',
