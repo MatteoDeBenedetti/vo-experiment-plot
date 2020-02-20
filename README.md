@@ -31,7 +31,7 @@ cd ~/rock/bundles/exoter/scripts
 ./vo_test_gen.rb
 ```
 at the end press ENTER to stop the script  
-The script will stop and the log folder is now ready. It si called "yyyymmdd-hhmm" and it's located at "~/rock/bundles/exoter/logs".  
+The script will stop and the log folder is now ready. It is called "yyyymmdd-hhmm" and it's located at "~/rock/bundles/exoter/logs".  
 This folder will be referred to from now on as the "*sequence folder*".
 
 ##### Run the VO:
@@ -58,7 +58,7 @@ cd ~/rock/bundles/exoter/scripts
 ./virtual_spartan.rb
 ```
 and wait for it to finish.  
-The execution of this script will generate another log folder, it si called “yyyymmdd-hhmm” and it’s located at “~/rock/bundles/exoter/logs”.  
+The execution of this script will generate another log folder, it is called “yyyymmdd-hhmm” and it’s located at “~/rock/bundles/exoter/logs”.  
 This folder will be referred to from now on as the "*experiment folder*".  
 
 ##### Export the VO logs:
@@ -71,12 +71,12 @@ Download them in a path of your choice
 For the sequence, move to the *sequence folder*:
 ```sh
 cd ~/rock/bundles/exoter/logs/<sequence folder>
-/<shell scripts patch>/RUN_export_sequence.sh
+/<shell scripts path>/RUN_export_sequence.sh
 ```
 For the esperiment, move to the *experiment folder*:
 ```sh
 cd ~/rock/bundles/exoter/logs/<experiment folder>
-/<shell scripts patch>/RUN_export_sequence.sh
+/<shell scripts path>/RUN_export_sequence.sh
 ```
 
 These 2 commands will generate the necessary txt files in the two respective folders.
@@ -106,7 +106,12 @@ legend_names_verbose = {
  '<name for test 1>',
  '<name for test 2>'};
  ```
- And run it.
+And run it.  
+The script will generate the following plots:
+- figure 1: VO estimation and ground truth on the XY plane
+- figure 2: VO estimation and ground truth on the Z axis over time
+- figure 3: VO position error on the x,y,z components and xyz error norm, all over distnace travelled
+- figure 4: VO orientation error on the heading, pitch and roll components and rpy error norm, all over distnace travelled
  
  For example, in case there were 2 experiments:  
  - experiment folder 1: "20200107-1421"; generated from the sequence folder 1: "20200107-1408"; that you want to call: "navcam"
