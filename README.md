@@ -4,7 +4,7 @@ Matlab scripts to plot the results of a VO experiment
 # RUNNING A VO EXPERIMENT:
 This instructionsserve as a guide for the process of running a VO experiment, logging the data and then plotting the results.
 
-### PREPARATION:
+### 1. PREPARATION:
 These are initial steps to be only performed once.
 
 ##### Switching on ExoTeR:
@@ -14,9 +14,14 @@ These are initial steps to be only performed once.
 ##### Switching on Vicon:
 - switch on the *gigantet* machine then the *ultranet* machine and launch vicon on the beast (follow the order 1-2-pc reported on the labels on the two machines)
 
-### RECORD TEST SEQUENCE
-Steps to record a test sequence (camera feed, IMU, vicon) to then run the VO on.
+### 2. RECORD TEST SEQUENCE
+Steps to record a test sequence (camera feed, IMU, vicon) to then run the VO on.  
 
+There are 2 ways to record a test sequence:
+- 2.1 automated
+- 2.2 with the joystick
+
+#### 2.1 Automated  
 ##### Set up the Motion Generator Task:
 This task will execute the desired motion described in its config file located in:
 ```sh
@@ -34,8 +39,19 @@ at the end press ENTER to stop the script
 The script will stop and the log folder is now ready. It is called "yyyymmdd-hhmm" and it's located at "~/rock/bundles/exoter/logs".  
 This folder will be referred to from now on as the "*sequence folder*".
 
-##### Run the VO:
-First, you need to point the VO to the just acquired logs.  
+#### 2.2 Joystick  
+##### Drive the rover:
+Use the following commands to execute the motion and record the necessary logs
+```sh
+cd ~/rock/bundles/exoter/scripts
+./manual_test_gen.rb
+```
+at the end press ENTER to stop the script  
+The script will stop and the log folder is now ready. It is called "yyyymmdd-hhmm" and it's located at "~/rock/bundles/exoter/logs".  
+This folder will be referred to from now on as the "*sequence folder*".
+
+### 3. Run the VO:
+Now that the sequence is recorded using either 2.1 or 2.2 you need to point the VO to the just acquired logs.  
 Open the VO script.
 
 ```sh
@@ -61,7 +77,7 @@ and wait for it to finish.
 The execution of this script will generate another log folder, it is called “yyyymmdd-hhmm” and it’s located at “~/rock/bundles/exoter/logs”.  
 This folder will be referred to from now on as the "*experiment folder*".  
 
-##### Export the VO logs:
+### 4. Export the VO logs:
 The logs are generated in files that can only be read using the rock-replay command.  
 To export them in txt move in their folders and run a dedicated shell script.
 
@@ -81,7 +97,7 @@ cd ~/rock/bundles/exoter/logs/<experiment folder>
 
 These 2 commands will generate the necessary txt files in the two respective folders.
 
-##### Plot the results:
+### 5. Plot the results:
 Copy the *sequence folder* and *experiment folder* in the log folder in the matlab workspace at "vo-experiment-plot/logs"
 
 Open the script "src/plot_vo.m"  
