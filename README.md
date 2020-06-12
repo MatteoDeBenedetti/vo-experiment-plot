@@ -1,5 +1,5 @@
 # vo-experiment-plot
-Matlab scripts to plot the results of a VO experiment
+Matlab scripts to plot the results of a VO experiment performed on ExoTeR in the Planetary Robotics Lab of the European Space Agency.
 
 # RUNNING A VO EXPERIMENT:
 This instructionsserve as a guide for the process of running a VO experiment, logging the data and then plotting the results.
